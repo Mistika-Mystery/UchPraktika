@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UchPraktika.Pages;
 
-namespace UchPraktika
+namespace UchPraktika.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для GlavPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GlavPage : Page
     {
-        public MainWindow()
+        public GlavPage()
         {
             InitializeComponent();
-            FramMain.Navigate(new GlavPage());
         }
     }
 }
