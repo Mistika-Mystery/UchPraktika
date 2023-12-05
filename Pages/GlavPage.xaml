@@ -9,6 +9,10 @@
       Title="GlavPage">
 
     <Grid>
-        
+        <TextBox x:Name="LoginTB" HorizontalAlignment="Left" Margin="315,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="ParolTB" HorizontalAlignment="Left" Margin="315,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="223,0,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="219,262,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top"/>
+        <Button Content="Вход" HorizontalAlignment="Left" Margin="315,307,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Page>

@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame x:Name="FramMain" Content=""/>
+        <Frame x:Name="FramMain" Content="">
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9CF9FE" Offset="1"/>
+                    <GradientStop Color="#FFCFDDE4" Offset="0.028"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
     </Grid>
 </Window>
