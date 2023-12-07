@@ -26,5 +26,12 @@ namespace UchPraktika
             InitializeComponent();
             FramMain.Navigate(new GlavPage());
         }
+
+        private void LogExBTN_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        
     }
 }
