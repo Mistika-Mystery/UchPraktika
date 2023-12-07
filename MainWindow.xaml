@@ -5,16 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UchPraktika"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ООО &quot;Рога и Копыта&quot;" Height="450" Width="800" WindowStyle="ThreeDBorderWindow">
     <Grid>
-        <Frame x:Name="FramMain" Content="">
-            <Frame.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF9CF9FE" Offset="1"/>
-                    <GradientStop Color="#FFCFDDE4" Offset="0.028"/>
-                </LinearGradientBrush>
-            </Frame.Background>
-        </Frame>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF00E3FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="FramMain" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="LogExBTN" Grid.Column="1" Content="Сменить пользователя" HorizontalAlignment="Left" Margin="647,10,0,0" VerticalAlignment="Top"/>
+        <Button Grid.Column="1" Content="Назад" HorizontalAlignment="Left" Margin="736,0,0,0" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Content="Заявки на ремонт и ослуживание ПК" HorizontalAlignment="Left" Margin="115,0,0,0" VerticalAlignment="Center" FontSize="24"/>
+
     </Grid>
 </Window>

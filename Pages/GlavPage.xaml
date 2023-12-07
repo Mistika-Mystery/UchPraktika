@@ -9,10 +9,16 @@
       Title="GlavPage">
 
     <Grid>
-        <TextBox x:Name="LoginTB" HorizontalAlignment="Left" Margin="315,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="223,0,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Margin="219,262,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top"/>
-        <Button x:Name="VhodBTN" Content="Вход" HorizontalAlignment="Left" Margin="315,307,0,0" VerticalAlignment="Top" Width="120" Click="VhodBTN_Click"/>
-        <PasswordBox x:Name="PassTB" HorizontalAlignment="Left" Margin="315,261,0,0" VerticalAlignment="Top" Width="120"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <TextBox x:Name="LoginTB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,5,0,0">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Margin="0,0,10,0"/>
+            <PasswordBox x:Name="PassTB" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="2,0,0,0"/>
+        </StackPanel>
+        <Button x:Name="VhodBTN" Content="Вход" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Click="VhodBTN_Click" Margin="0,20,0,0"/>
+            </StackPanel>
     </Grid>
 </Page>
