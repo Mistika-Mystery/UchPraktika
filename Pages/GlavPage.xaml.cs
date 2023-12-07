@@ -52,7 +52,7 @@ namespace UchPraktika.Pages
                             MessageBox.Show("Приветсвуем Вас " + userName.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
 
                             this.Content = null;
-                            NavigationService.Navigate(new AdnimPage());
+                            NavigationService.Navigate(new Jornal());
 
                             break;
                         default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;
