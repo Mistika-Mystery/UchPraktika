@@ -16,18 +16,14 @@ using System.Windows.Shapes;
 namespace UchPraktika.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AdnimPage.xaml
+    /// Логика взаимодействия для Jornal.xaml
     /// </summary>
-    public partial class AdnimPage : Page
+    public partial class Jornal : Page
     {
-        public AdnimPage()
+        public Jornal()
         {
             InitializeComponent();
-        }
-
-        private void RequestBTN_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Jornal());
+            JornalDG.ItemsSource=UchPractikEntities.GetContext().Requests.ToList();
         }
     }
 }
