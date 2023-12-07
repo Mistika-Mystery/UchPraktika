@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70" ></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5"></ColumnDefinition>
@@ -25,9 +25,7 @@
             <ColumnDefinition Width="5"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Frame x:Name="FramMain" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="LogExBTN" Grid.Column="1" Content="Сменить пользователя" HorizontalAlignment="Left" VerticalAlignment="Center" Click="LogExBTN_Click" Grid.Row="2" Margin="29,0,0,5"/>
-        <Button x:Name="AdminPanelBTN" Grid.Column="1" Content="Админ панель" HorizontalAlignment="Right" Grid.Row="2" Height="20" VerticalAlignment="Top" Margin="0,3,15,0" Click="AdminPanelBTN_Click"/>
+        <Frame x:Name="FramMain" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" ContentRendered="FramMain_ContentRendered"/>
         <Label Grid.Column="1" Content="Заявки на ремонт и ослуживание ПК" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
 
     </Grid>

@@ -25,5 +25,15 @@ namespace UchPraktika.Pages
             InitializeComponent();
             JornalDG.ItemsSource=UchPractikEntities.GetContext().Requests.ToList();
         }
+
+        private void EditBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
