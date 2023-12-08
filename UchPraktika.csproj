@@ -88,8 +88,14 @@
     <Compile Include="Pages\Jornal.xaml.cs">
       <DependentUpon>Jornal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RoleJornal.xaml.cs">
+      <DependentUpon>RoleJornal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserPage.xaml.cs">
       <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsersJornal.xaml.cs">
+      <DependentUpon>UsersJornal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Positions.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -145,7 +151,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RoleJornal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UsersJornal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,6 +222,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="wrench.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

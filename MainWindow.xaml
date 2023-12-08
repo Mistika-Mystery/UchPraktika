@@ -5,14 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UchPraktika"
         mc:Ignorable="d"
-        Title="ООО &quot;Рога и Копыта&quot;" Height="450" Width="800" WindowStyle="ThreeDBorderWindow">
+        Title="ООО &quot;Техносервис&quot;" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" Icon="/wrench.png" Background="#FFAEF9FF">
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="White"/>
-                <GradientStop Color="#FF00E3FF" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="70" ></RowDefinition>
@@ -26,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <Frame x:Name="FramMain" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" ContentRendered="FramMain_ContentRendered"/>
-        <Label Grid.Column="1" Content="Заявки на ремонт и ослуживание ПК" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <Label Grid.Column="1" Content="Учёт заявок на ремонт и ослуживание ПК" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
 
     </Grid>
 </Window>
