@@ -40,8 +40,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Margin="10,0,0,0" Click="LogBTN_Click"/>
+        <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click"/>
 
 
 

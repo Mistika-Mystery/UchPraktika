@@ -35,5 +35,15 @@ namespace UchPraktika.Pages
         {
 
         }
+
+        private void LogBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new GlavPage());
+        }
+
+        private void AdminPanelBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AdnimPage());
+        }
     }
 }

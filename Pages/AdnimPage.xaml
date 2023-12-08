@@ -9,9 +9,11 @@
       Title="AdnimPage">
 
     <Grid>
-        <Button x:Name="RequestBTN" Content="Журнал заявок" HorizontalAlignment="Left" Margin="202,99,0,0" VerticalAlignment="Top" Click="RequestBTN_Click"/>
-        <Button x:Name="UserBTN" Content="Список пользователенй" HorizontalAlignment="Left" Margin="204,146,0,0" VerticalAlignment="Top"/>
-        <Button Content="Редактор связей в бд ( должгости\по)" HorizontalAlignment="Left" Margin="202,210,0,0" VerticalAlignment="Top"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="RequestBTN" Content="Журнал заявок" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RequestBTN_Click" FontWeight="Bold" Margin="0,0,0,10"/>
+        <Button x:Name="UserBTN" Content="Список пользователенй" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,0,10"/>
+        <Button Content="Роли пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
 
     </Grid>
 </Page>
