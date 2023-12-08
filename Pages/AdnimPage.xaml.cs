@@ -29,5 +29,15 @@ namespace UchPraktika.Pages
         {
             NavigationService.Navigate(new Jornal());
         }
+
+        private void UserBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UsersJornal());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RoleJornal());
+        }
     }
 }

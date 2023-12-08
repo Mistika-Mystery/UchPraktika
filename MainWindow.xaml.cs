@@ -25,18 +25,10 @@ namespace UchPraktika
         {
             InitializeComponent();
             FramMain.Navigate(new GlavPage());
-            Manager.MainFrame = FramMain;
+            
         }
 
-        private void LogExBTN_Click(object sender, RoutedEventArgs e)
-        {
-           Manager.MainFrame.Navigate(new GlavPage());
-        }
-
-        private void AdminPanelBTN_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new AdnimPage());
-        }
+        
 
         private void FramMain_ContentRendered(object sender, EventArgs e)
         {

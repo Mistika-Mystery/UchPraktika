@@ -11,8 +11,8 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button x:Name="RequestBTN" Content="Журнал заявок" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RequestBTN_Click" FontWeight="Bold" Margin="0,0,0,10"/>
-        <Button x:Name="UserBTN" Content="Список пользователенй" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,0,10"/>
-        <Button Content="Роли пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Button x:Name="UserBTN" Content="Список пользователенй" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,0,10" Click="UserBTN_Click"/>
+        <Button Content="Роли пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Click="Button_Click"/>
         </StackPanel>
 
     </Grid>
