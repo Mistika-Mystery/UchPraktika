@@ -23,7 +23,7 @@ namespace UchPraktika.Pages
         public UsersJornal()
         {
             InitializeComponent();
-            UserDG.ItemsSource=UchPractikEntities.GetContext().User.ToList();
+            UserDG.ItemsSource=UchPractikEntities1.GetContext().User.ToList();
         }
 
 

@@ -15,11 +15,20 @@ namespace UchPraktika
     
     public partial class UchPractikEntities1 : DbContext
     {
+        private static UchPractikEntities1 _UchPr;
         public UchPractikEntities1()
             : base("name=UchPractikEntities1")
         {
         }
-    
+        public static UchPractikEntities1 GetContext()
+        {
+            if (_UchPr == null)
+            {
+                _UchPr = new UchPractikEntities1();
+            }
+            return _UchPr;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

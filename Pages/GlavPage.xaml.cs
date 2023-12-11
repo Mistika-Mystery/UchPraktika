@@ -30,7 +30,7 @@ namespace UchPraktika.Pages
         {
             try
             {
-                var userName = UchPractikEntities.GetContext().User.FirstOrDefault(x => x.Login == LoginTB.Text && x.Pass == PassTB.Password);
+                var userName = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Login == LoginTB.Text && x.Pass == PassTB.Password);
                 if (userName == null)
                 {
 

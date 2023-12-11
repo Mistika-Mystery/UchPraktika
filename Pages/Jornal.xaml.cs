@@ -23,7 +23,7 @@ namespace UchPraktika.Pages
         public Jornal()
         {
             InitializeComponent();
-            JornalDG.ItemsSource=UchPractikEntities.GetContext().Requests.ToList();
+            JornalDG.ItemsSource=UchPractikEntities1.GetContext().Requests.ToList();
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
