@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="151e502ca6144d8f8afab8014a89cbb6" Name="Diagram1">
-        <EntityTypeShape EntityType="UchPractikModel.Departments" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.Files" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.LicensiaInfo" Width="1.5" PointX="3.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.Positions" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.Requests" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.Role" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.Software" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.SoftwarePosition" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.Status" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UchPractikModel.User" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+      <Diagram DiagramId="fba2877b5ac6474e9599758fe92b8c84" Name="Diagram1">
+        <EntityTypeShape EntityType="UchPractikModel.Departments" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.Files" Width="1.5" PointX="1.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.LicensiaInfo" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.Positions" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.Requests" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.Role" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.Software" Width="1.5" PointX="3.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.SoftwarePosition" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.Status" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchPractikModel.User" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="UchPractikModel.FK_Requests_Departments" ManuallyRouted="false" />
         <AssociationConnector Association="UchPractikModel.FK_User_Departments" ManuallyRouted="false" />
         <AssociationConnector Association="UchPractikModel.FK__Software__FileID__2B3F6F97" ManuallyRouted="false" />

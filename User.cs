@@ -23,6 +23,7 @@ namespace UchPraktika
         public int UserID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string FatherName { get; set; }
         public int RoleID { get; set; }
         public int DepartamentID { get; set; }
         public int PositionID { get; set; }
