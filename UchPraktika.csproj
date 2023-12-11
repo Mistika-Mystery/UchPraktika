@@ -84,6 +84,9 @@
     <Compile Include="Pages\AdnimPage.xaml.cs">
       <DependentUpon>AdnimPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EddEditUserPage.xaml.cs">
+      <DependentUpon>EddEditUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GlavPage.xaml.cs">
       <DependentUpon>GlavPage.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AdnimPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EddEditUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
