@@ -40,7 +40,7 @@ namespace UchPraktika.Pages
 
         private void CreateBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EddEditUserPage());
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
