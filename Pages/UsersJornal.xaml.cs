@@ -23,6 +23,34 @@ namespace UchPraktika.Pages
         public UsersJornal()
         {
             InitializeComponent();
+            UserDG.ItemsSource=UchPractikEntities.GetContext().User.ToList();
+        }
+
+
+
+        private void LogBTN_Click1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new GlavPage());
+        }
+
+        private void AdminPanelBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AdnimPage());
+        }
+
+        private void CreateBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTN_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

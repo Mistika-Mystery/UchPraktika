@@ -24,7 +24,8 @@ namespace UchPraktika
         public MainWindow()
         {
             InitializeComponent();
-            FramMain.Navigate(new GlavPage());
+            //FramMain.Navigate(new GlavPage());
+            FramMain.Navigate(new UsersJornal());
             
         }
 
