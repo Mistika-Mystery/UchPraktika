@@ -17,7 +17,6 @@ namespace UchPraktika
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Positions()
         {
-            this.Requests = new HashSet<Requests>();
             this.SoftwarePosition = new HashSet<SoftwarePosition>();
             this.User = new HashSet<User>();
         }
@@ -25,8 +24,6 @@ namespace UchPraktika
         public int PositionID { get; set; }
         public string PositionName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Requests> Requests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SoftwarePosition> SoftwarePosition { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

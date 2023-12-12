@@ -40,12 +40,11 @@
             <PropertyRef Name="RequestID" />
           </Key>
           <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DepartmentID" Type="int" />
-          <Property Name="PositionID" Type="int" />
           <Property Name="RequestDate" Type="datetime" />
           <Property Name="StatusID" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="UserID" Type="int" />
+          <Property Name="Img" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -102,6 +101,9 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DR" Type="date" Nullable="false" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
           <Property Name="DepartamentID" Type="int" Nullable="false" />
           <Property Name="PositionID" Type="int" Nullable="false" />
@@ -117,30 +119,6 @@
             </Principal>
             <Dependent Role="Software">
               <PropertyRef Name="FileID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Requests_Departments">
-          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
-          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Departments">
-              <PropertyRef Name="DepartmentID" />
-            </Principal>
-            <Dependent Role="Requests">
-              <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Requests_Positions">
-          <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
-          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Positions">
-              <PropertyRef Name="PositionID" />
-            </Principal>
-            <Dependent Role="Requests">
-              <PropertyRef Name="PositionID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -256,14 +234,6 @@
             <End Role="Files" EntitySet="Files" />
             <End Role="Software" EntitySet="Software" />
           </AssociationSet>
-          <AssociationSet Name="FK_Requests_Departments" Association="Self.FK_Requests_Departments">
-            <End Role="Departments" EntitySet="Departments" />
-            <End Role="Requests" EntitySet="Requests" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Requests_Positions" Association="Self.FK_Requests_Positions">
-            <End Role="Positions" EntitySet="Positions" />
-            <End Role="Requests" EntitySet="Requests" />
-          </AssociationSet>
           <AssociationSet Name="FK_Requests_Status1" Association="Self.FK_Requests_Status1">
             <End Role="Status" EntitySet="Status" />
             <End Role="Requests" EntitySet="Requests" />
@@ -309,7 +279,6 @@
           <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_Departments" FromRole="Departments" ToRole="Requests" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Departments" FromRole="Departments" ToRole="User" />
         </EntityType>
         <EntityType Name="Files">
@@ -335,7 +304,6 @@
           </Key>
           <Property Name="PositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PositionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_Positions" FromRole="Positions" ToRole="Requests" />
           <NavigationProperty Name="SoftwarePosition" Relationship="Self.FK_SoftwarePosition_Positions" FromRole="Positions" ToRole="SoftwarePosition" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Positions" FromRole="Positions" ToRole="User" />
         </EntityType>
@@ -344,14 +312,11 @@
             <PropertyRef Name="RequestID" />
           </Key>
           <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DepartmentID" Type="Int32" />
-          <Property Name="PositionID" Type="Int32" />
           <Property Name="RequestDate" Type="DateTime" Precision="3" />
           <Property Name="StatusID" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserID" Type="Int32" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK_Requests_Departments" FromRole="Requests" ToRole="Departments" />
-          <NavigationProperty Name="Positions" Relationship="Self.FK_Requests_Positions" FromRole="Requests" ToRole="Positions" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Requests_Status1" FromRole="Requests" ToRole="Status" />
           <NavigationProperty Name="User" Relationship="Self.FK_Requests_User" FromRole="Requests" ToRole="User" />
         </EntityType>
@@ -417,6 +382,9 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DR" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoleID" Type="Int32" Nullable="false" />
           <Property Name="DepartamentID" Type="Int32" Nullable="false" />
           <Property Name="PositionID" Type="Int32" Nullable="false" />
@@ -427,18 +395,6 @@
           <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_User" FromRole="User" ToRole="Requests" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
-        <Association Name="FK_Requests_Departments">
-          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
-          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Departments">
-              <PropertyRef Name="DepartmentID" />
-            </Principal>
-            <Dependent Role="Requests">
-              <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Departments">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -472,18 +428,6 @@
             </Principal>
             <Dependent Role="SoftwarePosition">
               <PropertyRef Name="LicenseID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Requests_Positions">
-          <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
-          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Positions">
-              <PropertyRef Name="PositionID" />
-            </Principal>
-            <Dependent Role="Requests">
-              <PropertyRef Name="PositionID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -571,10 +515,6 @@
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <AssociationSet Name="FK_Requests_Departments" Association="Self.FK_Requests_Departments">
-            <End Role="Departments" EntitySet="Departments" />
-            <End Role="Requests" EntitySet="Requests" />
-          </AssociationSet>
           <AssociationSet Name="FK_User_Departments" Association="Self.FK_User_Departments">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="User" EntitySet="User" />
@@ -586,10 +526,6 @@
           <AssociationSet Name="FK_SoftwarePosition_LicensiaInfo1" Association="Self.FK_SoftwarePosition_LicensiaInfo1">
             <End Role="LicensiaInfo" EntitySet="LicensiaInfo" />
             <End Role="SoftwarePosition" EntitySet="SoftwarePosition" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Requests_Positions" Association="Self.FK_Requests_Positions">
-            <End Role="Positions" EntitySet="Positions" />
-            <End Role="Requests" EntitySet="Requests" />
           </AssociationSet>
           <AssociationSet Name="FK_SoftwarePosition_Positions" Association="Self.FK_SoftwarePosition_Positions">
             <End Role="Positions" EntitySet="Positions" />
@@ -660,12 +596,11 @@
             <EntityTypeMapping TypeName="UchPractikModel.Requests">
               <MappingFragment StoreEntitySet="Requests">
                 <ScalarProperty Name="RequestID" ColumnName="RequestID" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
                 <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
                 <ScalarProperty Name="StatusID" ColumnName="StatusID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -728,6 +663,9 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="DR" ColumnName="DR" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="DepartamentID" ColumnName="DepartamentID" />
                 <ScalarProperty Name="PositionID" ColumnName="PositionID" />

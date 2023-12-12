@@ -15,15 +15,12 @@ namespace UchPraktika
     public partial class Requests
     {
         public int RequestID { get; set; }
-        public Nullable<int> DepartmentID { get; set; }
-        public Nullable<int> PositionID { get; set; }
         public Nullable<System.DateTime> RequestDate { get; set; }
         public int StatusID { get; set; }
         public string Description { get; set; }
         public Nullable<int> UserID { get; set; }
+        public string Img { get; set; }
     
-        public virtual Departments Departments { get; set; }
-        public virtual Positions Positions { get; set; }
         public virtual Status Status { get; set; }
         public virtual User User { get; set; }
     }

@@ -19,6 +19,7 @@
                 <DataGridTextColumn Header="№" Width="50" Binding="{Binding UserID}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Surname}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding FatherName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding Departments.DepartmentName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Positions.PositionName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding Role.RoleName}"></DataGridTextColumn>

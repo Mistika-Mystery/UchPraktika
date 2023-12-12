@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UchPraktika"
         mc:Ignorable="d"
-        Title="ООО &quot;Техносервис&quot;" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" Icon="/wrench.png" Background="#FFAEF9FF" MinWidth="600" MinHeight="450" MaxWidth="1000" MaxHeight="1000">
+        Title="ООО &quot;Техносервис&quot;" Height="450" Width="900" WindowStyle="ThreeDBorderWindow" Icon="/wrench.png" Background="#FFAEF9FF" MinWidth="800" MinHeight="450" >
     <Grid>
 
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
         <Frame x:Name="FramMain" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1" ContentRendered="FramMain_ContentRendered"/>
-        <Label Grid.Column="1" Content="Учёт внутренних заявок на ремонт и ослуживание ПК" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <Label Grid.Column="1" Content="Учёт внутренних заявок на ремонт и обслуживание ПК" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
 
     </Grid>
 </Window>

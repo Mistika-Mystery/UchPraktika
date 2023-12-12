@@ -24,6 +24,9 @@ namespace UchPraktika
         public string Name { get; set; }
         public string Surname { get; set; }
         public string FatherName { get; set; }
+        public System.DateTime DR { get; set; }
+        public string Tel { get; set; }
+        public string Email { get; set; }
         public int RoleID { get; set; }
         public int DepartamentID { get; set; }
         public int PositionID { get; set; }
