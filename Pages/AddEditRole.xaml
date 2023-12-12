@@ -1,0 +1,27 @@
+﻿<Page x:Class="UchPraktika.Pages.AddEditRole"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchPraktika.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditRole">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Button x:Name="BackBTN" Content="Назад/Отменить" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Margin="50,0,0,0" Click="Button_Click"/>
+        <Button x:Name="SaveBTN" Content="   Сохранить   " HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Margin="0,0,100,0" Click="SaveBTN_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Width="310" Margin="0,0,0,50">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Название роли: " VerticalAlignment="Center" FontSize="18" Width="140"/>
+            <TextBox FontSize="18" Width="170" MaxLength="50"></TextBox>
+        </StackPanel>
+    </Grid>
+</Page>
