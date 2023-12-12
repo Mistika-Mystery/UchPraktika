@@ -23,7 +23,7 @@ namespace UchPraktika.Pages
         public RoleJornal()
         {
             InitializeComponent();
-            RoleDG.ItemsSource=UchPractikEntities1.GetContext().Role.ToList();
+            
         }
 
         private void LogBTN_Click(object sender, RoutedEventArgs e)
@@ -49,6 +49,15 @@ namespace UchPraktika.Pages
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility== Visibility.Visible)
+            {
+                UchPractikEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p=> p.Reload());
+                RoleDG.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
+            }
         }
     }
 }

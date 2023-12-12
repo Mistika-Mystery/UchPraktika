@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,11 +22,12 @@ namespace UchPraktika.Pages
     public partial class AddEditRole : Page
     {
         private Role _role = new Role();
-
+        Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]*$");
+        MatchCollection match;
         public AddEditRole()
         {
             InitializeComponent();
-            DataContext= _role;
+            DataContext = _role;
 
 
         }
@@ -37,7 +39,20 @@ namespace UchPraktika.Pages
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors= new StringBuilder();
+            if (string.IsNullOrWhiteSpace(_role.RoleName))errors.AppendLine("Укажите название роли");
+            match=nazvania.Matches(NameTB.Text);
+            if (match.Count == 0) errors.AppendLine("Название должно содеожать только русские быквы, первая буква должна быть Заглавной!");
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
 
+            if (_role.RileID==0)
+            {
+
+            }
         }
     }
 }

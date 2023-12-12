@@ -21,7 +21,7 @@
         <Button x:Name="SaveBTN" Content="   Сохранить   " HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" FontSize="18" Grid.Column="1" Margin="0,0,100,0" Click="SaveBTN_Click"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Width="310" Margin="0,0,0,50">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Название роли: " VerticalAlignment="Center" FontSize="18" Width="140"/>
-            <TextBox FontSize="18" Width="170" MaxLength="50"></TextBox>
+            <TextBox x:Name="NameTB" Text="{Binding RoleName}" FontSize="18" Width="170" MaxLength="50"></TextBox>
         </StackPanel>
     </Grid>
 </Page>
