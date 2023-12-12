@@ -39,5 +39,10 @@ namespace UchPraktika.Pages
         {
             NavigationService.Navigate(new RoleJornal());
         }
+
+        private void LoginBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new GlavPage());
+        }
     }
 }

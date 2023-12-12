@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UchPraktika"
         mc:Ignorable="d"
-        Title="ООО &quot;Техносервис&quot;" Height="450" Width="900" WindowStyle="ThreeDBorderWindow" Icon="/wrench.png" Background="#FFAEF9FF" MinWidth="800" MinHeight="450" >
+        Title="ООО &quot;Техносервис&quot;" Height="600" Width="900" WindowStyle="ThreeDBorderWindow" Icon="/wrench.png" Background="#FFAEF9FF" MinWidth="800" MinHeight="500" >
     <Grid>
 
         <Grid.RowDefinitions>

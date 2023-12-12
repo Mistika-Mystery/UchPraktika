@@ -16,13 +16,16 @@
         </Grid.RowDefinitions>
         <DataGrid x:Name="UserDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="№" Width="50" Binding="{Binding UserID}"></DataGridTextColumn>
+                <!--<DataGridTextColumn Header="№" Width="50" Binding="{Binding UserID}"></DataGridTextColumn>-->
                 <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Surname}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Отчество" Width="*" Binding="{Binding FatherName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Подразделение" Width="*" Binding="{Binding Departments.DepartmentName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Positions.PositionName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding Role.RoleName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ДР" Width="*" Binding="{Binding DR, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Телефон" Width="*" Binding="{Binding Tel}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Почта" Width="*" Binding="{Binding Email}"></DataGridTextColumn>
 
                 <DataGridTemplateColumn Width="100">
                     <DataGridTemplateColumn.CellTemplate>
@@ -42,11 +45,12 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0" Click="LogBTN_Click1"/>
-        <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click"/>
-        <Button x:Name="CreateBTN" Content="  Добавить новую запись  " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="CreateBTN_Click"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center"><TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Поиск по имени или фамилии" VerticalAlignment="Top"/>
-            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Margin="10,0,0,0"/>
+        <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0" Click="LogBTN_Click1" FontSize="16"/>
+        <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click" FontSize="16"/>
+        <Button x:Name="CreateBTN" Content="  Добавить нового пользователя  " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="CreateBTN_Click" FontSize="16" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Поиск по ФИО" VerticalAlignment="Top" FontSize="16"/>
+            <TextBox TextWrapping="Wrap" VerticalAlignment="Center" Width="147" Margin="10,0,0,0" FontSize="16"/>
         </StackPanel>
 
 

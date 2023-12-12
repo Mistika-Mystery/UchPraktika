@@ -11,7 +11,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -23,27 +23,36 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Center" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Center" FontSize="18" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Center" FontSize="18" Grid.Row="2"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Роль" VerticalAlignment="Center" FontSize="18" Grid.Row="3"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Подразделение" VerticalAlignment="Center" FontSize="18" Grid.Row="4"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Center" FontSize="18" Grid.Row="5"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Center" FontSize="18" Grid.Row="6"/>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Center" FontSize="18" Grid.Row="7"/>
-        <Button x:Name="BackBTN" Content="Отмена / Назад" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" IsCancel="True" FontSize="16"/>
-        <Button x:Name="SaveBTN" Grid.Column="1" Content="  Сохранить  " HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" FontSize="18"/>
-        <TextBox x:Name="NameTB" Grid.Column="1" TextWrapping="Wrap" Width="227" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="SurNameTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="227" FontSize="18" Grid.Row="1"/>
-        <TextBox x:Name="FathNameTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="227" FontSize="18" Grid.Row="2"/>
-        <ComboBox x:Name="RoleCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="227"/>
-        <ComboBox x:Name="DepatCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="227"/>
-        <ComboBox x:Name="PositCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="227"/>
-        <TextBox x:Name="LoginTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="227" FontSize="18" Grid.Row="6"/>
-        <TextBox x:Name="PassTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="227" FontSize="18" Grid.Row="7"/>
-        
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Center" FontSize="18" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Center" FontSize="18" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Роль" VerticalAlignment="Center" FontSize="18" Grid.Row="3"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Подразделение" VerticalAlignment="Center" FontSize="18" Grid.Row="4"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Должность" VerticalAlignment="Center" FontSize="18" Grid.Row="5"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Center" FontSize="18" Grid.Row="6"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Center" FontSize="18" Grid.Row="7"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Center" FontSize="18" Grid.Row="8"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Почта" VerticalAlignment="Center" FontSize="18" Grid.Row="9"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Телефон" VerticalAlignment="Center" FontSize="18" Grid.Row="10"/>
+        <Button x:Name="BackBTN" Content="Отмена / Назад" HorizontalAlignment="Right" Grid.Row="11" VerticalAlignment="Center" IsCancel="True" FontSize="16" Click="BackBTN_Click"/>
+        <Button x:Name="SaveBTN" Grid.Column="1" Content="  Сохранить  " HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" FontSize="18"/>
+        <TextBox x:Name="NameTB" Grid.Column="1" TextWrapping="Wrap" Width="280" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" MaxLength="50"/>
+        <TextBox x:Name="SurNameTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="1" MaxLength="50"/>
+        <TextBox x:Name="FathNameTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="2" MaxLength="50"/>
+        <ComboBox x:Name="RoleCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="280"/>
+        <ComboBox x:Name="DepatCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="280"/>
+        <ComboBox x:Name="PositCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="280"/>
+        <TextBox x:Name="LoginTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="6" MaxLength="50"/>
+        <TextBox x:Name="PassTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="7" MaxLength="50"/>
+        <DatePicker x:Name="DRDP" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="279"/>
+        <TextBox x:Name="EmailTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="9" MaxLength="50"/>
+        <TextBox x:Name="TelTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="10" MaxLength="50"/>
+
 
 
     </Grid>

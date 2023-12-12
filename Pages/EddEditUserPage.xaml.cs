@@ -24,5 +24,10 @@ namespace UchPraktika.Pages
         {
             InitializeComponent();
         }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UsersJornal());
+        }
     }
 }
