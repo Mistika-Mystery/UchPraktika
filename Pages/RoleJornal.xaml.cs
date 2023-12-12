@@ -33,7 +33,7 @@ namespace UchPraktika.Pages
 
         private void AddRolBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditRole());
+            NavigationService.Navigate(new AddEditRole(null));
         }
 
         private void AdminBTN_Click(object sender, RoutedEventArgs e)
@@ -43,12 +43,27 @@ namespace UchPraktika.Pages
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
+            var delRole = RoleDG.SelectedItems.Cast<Role>().ToList();
+            if (MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    UchPractikEntities1.GetContext().Role.RemoveRange(delRole);
+                    UchPractikEntities1.GetContext().SaveChanges();
+                    MessageBox.Show("Пользователь удален!");
+                    RoleDG.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }    
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddEditRole((sender as Button).DataContext as Role));
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

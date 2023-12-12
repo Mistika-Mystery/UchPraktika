@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,9 +25,13 @@ namespace UchPraktika.Pages
         private Role _role = new Role();
         Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]*$");
         MatchCollection match;
-        public AddEditRole()
+        public AddEditRole(Role selectRole)
         {
             InitializeComponent();
+            if (selectRole != null)
+            {
+                _role = selectRole;
+            }
             DataContext = _role;
 
 
@@ -40,9 +45,9 @@ namespace UchPraktika.Pages
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors= new StringBuilder();
-            if (string.IsNullOrWhiteSpace(_role.RoleName))errors.AppendLine("Укажите название роли");
+            if (string.IsNullOrWhiteSpace(_role.RoleName))errors.AppendLine("Укажите название роли!");
             match=nazvania.Matches(NameTB.Text);
-            if (match.Count == 0) errors.AppendLine("Название должно содеожать только русские быквы, первая буква должна быть Заглавной!");
+            if (match.Count == 0) errors.AppendLine("Название должно содеожать только русские быквы! Первая буква должна быть Заглавной!");
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
@@ -51,7 +56,17 @@ namespace UchPraktika.Pages
 
             if (_role.RileID==0)
             {
-
+                UchPractikEntities1.GetContext().Role.Add(_role);
+            }
+            try
+            {
+                UchPractikEntities1.GetContext().SaveChanges();
+                MessageBox.Show("Роль успешно сохранена!");
+                NavigationService.Navigate(new RoleJornal());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
     }
