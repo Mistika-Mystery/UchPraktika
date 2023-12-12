@@ -24,14 +24,14 @@
                 <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Positions.PositionName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding Role.RoleName}"></DataGridTextColumn>
 
-                <DataGridTemplateColumn Width="*">
+                <DataGridTemplateColumn Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="EditBTN" Content="Редактировать" Click="EditBTN_Click"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="*">
+                <DataGridTemplateColumn Width="70">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="DelBTN" Content="Удалить" Click="DelBTN_Click"></Button>

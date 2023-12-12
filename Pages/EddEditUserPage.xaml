@@ -43,6 +43,7 @@
         <ComboBox x:Name="PositCB" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="227"/>
         <TextBox x:Name="LoginTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="227" FontSize="18" Grid.Row="6"/>
         <TextBox x:Name="PassTB" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="227" FontSize="18" Grid.Row="7"/>
+        
 
 
     </Grid>

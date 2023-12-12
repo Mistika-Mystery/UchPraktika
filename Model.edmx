@@ -44,7 +44,7 @@
           <Property Name="StatusID" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="UserID" Type="int" />
-          <Property Name="Img" Type="nvarchar(max)" />
+          <Property Name="Img" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -316,7 +316,7 @@
           <Property Name="StatusID" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserID" Type="Int32" />
-          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Requests_Status1" FromRole="Requests" ToRole="Status" />
           <NavigationProperty Name="User" Relationship="Self.FK_Requests_User" FromRole="Requests" ToRole="User" />
         </EntityType>

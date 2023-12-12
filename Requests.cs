@@ -19,7 +19,7 @@ namespace UchPraktika
         public int StatusID { get; set; }
         public string Description { get; set; }
         public Nullable<int> UserID { get; set; }
-        public string Img { get; set; }
+        public byte[] Img { get; set; }
     
         public virtual Status Status { get; set; }
         public virtual User User { get; set; }

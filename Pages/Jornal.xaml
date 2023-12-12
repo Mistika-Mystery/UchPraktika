@@ -34,7 +34,9 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Дата заявки" Width="*" Binding="{Binding RequestDate}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Изображение" Width="*" Binding="{Binding Img}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status.NameStatus}"></DataGridTextColumn>
+                
                 <DataGridTemplateColumn Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

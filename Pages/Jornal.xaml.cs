@@ -33,7 +33,7 @@ namespace UchPraktika.Pages
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void LogBTN_Click(object sender, RoutedEventArgs e)
