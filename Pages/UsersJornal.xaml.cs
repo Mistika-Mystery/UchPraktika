@@ -23,7 +23,7 @@ namespace UchPraktika.Pages
         public UsersJornal()
         {
             InitializeComponent();
-            UserDG.ItemsSource=UchPractikEntities1.GetContext().User.ToList();
+            
         }
 
 
@@ -51,6 +51,15 @@ namespace UchPraktika.Pages
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                UchPractikEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                UserDG.ItemsSource = UchPractikEntities1.GetContext().User.ToList();
+            }
         }
     }
 }
