@@ -24,8 +24,10 @@ namespace UchPraktika.Pages
     public partial class EddEditUserPage : Page
     {
         private User _user = new User();
-        Regex name = new Regex(@"^[А-ЯЁ][А-ЯЁа-яё\s-]*$");
-        Regex cifr = new Regex(@"^[0-9-]+$");
+        Regex name = new Regex(@"^[А-ЯЁа-яё\s\-]{2,50}$");
+        Regex cifr = new Regex(@"^\d{7,10}$");
+        Regex email = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+        Regex logg = new Regex(@"^[a-zA-Zа-яА-Я0-9]{1,50}$");
         MatchCollection match;
         public EddEditUserPage(User selectUser)
         {
@@ -35,10 +37,10 @@ namespace UchPraktika.Pages
                 _user = selectUser;
             }
             DataContext = _user;
-            RoleCB.ItemsSource=UchPractikEntities1.GetContext().Role.ToList();
+            RoleCB.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
             DepatCB.ItemsSource = UchPractikEntities1.GetContext().Departments.ToList();
             PositCB.ItemsSource = UchPractikEntities1.GetContext().Positions.ToList();
-        } 
+        }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
@@ -81,22 +83,44 @@ namespace UchPraktika.Pages
                 errors.AppendLine("Такой логин уже существует, выберите другой");
             }
             match = name.Matches(NameTB.Text);
-            if (match.Count == 0) errors.AppendLine("Имя должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+            if (match.Count == 0) errors.AppendLine("Имя должно содержать только русские быквы! Первая буква должна быть Заглавной! Минимум 2 символа, максимум 50");
             match = name.Matches(SurnameTB.Text);
-            if (match.Count == 0) errors.AppendLine("Фамилия должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+            if (match.Count == 0) errors.AppendLine("Фамилия должно содержать только русские быквы! Первая буква должна быть Заглавной! Минимум 2 символа, максимум 50");
             match = name.Matches(FathNameTB.Text);
-            if (match.Count == 0) errors.AppendLine("Отчество должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+            if (match.Count == 0) errors.AppendLine("Отчество должно содержать только русские быквы! Первая буква должна быть Заглавной! Минимум 2 символа, максимум 50");
+            match = cifr.Matches(TelTB.Text);
+            if (match.Count == 0) errors.AppendLine("Телефон может содержать только цифры! Количество цифв должно быть не меньше 7 и не больше 10 символов");
+            match = logg.Matches(LoginTB.Text);
+            if (match.Count == 0) errors.AppendLine("Логин может состоять толлько из букв и цифр! Минимум 1 символ, максимум 50");
+            match = email.Matches(EmailTB.Text);
+            if (match.Count == 0) errors.AppendLine("Почта должна содержать только латинские буквы! Знак @, и доменный адрес! Максимум 50 символов");
+            match = logg.Matches(PassTB.Text);
+            if (match.Count == 0) errors.AppendLine("Пароль может состоять толлько из букв и цифр! Минимум 1 символ, максимум 50");
+            if (_user.DR == DateTime.Today || _user.DR > DateTime.Today || _user.DR == null || _user.DR < DRDP.DisplayDateStart)
+            {
+                errors.AppendLine("Неправильно введена дата рождения");
 
-
-
-
-
+            }
             if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString());
-                return;
+                    MessageBox.Show(errors.ToString());
+                    return;
             }
 
+            if (_user.UserID== 0)
+            {
+                UchPractikEntities1.GetContext().User.Add(_user);
+            }
+            try
+            {
+                UchPractikEntities1.GetContext().SaveChanges();
+                MessageBox.Show("Пользователь успешно сохранен!");
+                NavigationService.Navigate(new UsersJornal());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

@@ -51,7 +51,7 @@
         <TextBox x:Name="PassTB" Text="{Binding Pass}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="7" MaxLength="50"/>
         <DatePicker x:Name="DRDP" SelectedDate="{Binding DR, StringFormat=dd.mm.yyyy}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="279" FirstDayOfWeek="Monday" SelectedDateFormat="Short" DisplayDateStart="1950-01-01" DisplayDate="2023-01-01" />
         <TextBox x:Name="EmailTB" Text="{Binding Email}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="9" MaxLength="50"/>
-        <TextBox x:Name="TelTB" Text="{Binding Tel}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="10" MaxLength="50"/>
+        <TextBox x:Name="TelTB" Text="{Binding Tel}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="10" MaxLength="11"/>
 
 
 
