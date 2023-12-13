@@ -25,7 +25,7 @@ namespace UchPraktika.Pages
     {
         private User _user = new User();
         Regex name = new Regex(@"^[А-ЯЁа-яё\s\-]{2,50}$");
-        Regex cifr = new Regex(@"^\d{7,10}$");
+        Regex cifr = new Regex(@"^\d{7}$|^\d{10}$");
         Regex email = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
         Regex logg = new Regex(@"^[a-zA-Zа-яА-Я0-9]{1,50}$");
         MatchCollection match;
@@ -67,21 +67,6 @@ namespace UchPraktika.Pages
             if (_user.Role == null) errors.AppendLine("Выберите роль");
             if (_user.Departments == null) errors.AppendLine("Выберите подразделение");
             if (_user.Positions == null) errors.AppendLine("Выберите должность");
-            var Email = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Email == _user.Email.ToString());
-            if (Email != null)
-            {
-                errors.AppendLine("Этот email уже заригистрирован");
-            }
-            var Tel = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Tel == _user.Tel.ToString());
-            if (Tel != null)
-            {
-                errors.AppendLine("Этот телефон уже заригистрирован");
-            }
-            var Log = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Login == _user.Login.ToString());
-            if (Log != null)
-            {
-                errors.AppendLine("Такой логин уже существует, выберите другой");
-            }
             match = name.Matches(NameTB.Text);
             if (match.Count == 0) errors.AppendLine("Имя должно содержать только русские быквы! Первая буква должна быть Заглавной! Минимум 2 символа, максимум 50");
             match = name.Matches(SurnameTB.Text);
@@ -89,7 +74,7 @@ namespace UchPraktika.Pages
             match = name.Matches(FathNameTB.Text);
             if (match.Count == 0) errors.AppendLine("Отчество должно содержать только русские быквы! Первая буква должна быть Заглавной! Минимум 2 символа, максимум 50");
             match = cifr.Matches(TelTB.Text);
-            if (match.Count == 0) errors.AppendLine("Телефон может содержать только цифры! Количество цифв должно быть не меньше 7 и не больше 10 символов");
+            if (match.Count == 0) errors.AppendLine("Телефон может содержать только цифры! Количество цифв должно быть либо 7, либо 10!");
             match = logg.Matches(LoginTB.Text);
             if (match.Count == 0) errors.AppendLine("Логин может состоять толлько из букв и цифр! Минимум 1 символ, максимум 50");
             match = email.Matches(EmailTB.Text);
@@ -109,6 +94,26 @@ namespace UchPraktika.Pages
 
             if (_user.UserID== 0)
             {
+                var Email = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Email == _user.Email.ToString());
+                if (Email != null)
+                {
+                    errors.AppendLine("Этот email уже заригистрирован");
+                }
+                var Tel = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Tel == _user.Tel.ToString());
+                if (Tel != null)
+                {
+                    errors.AppendLine("Этот телефон уже заригистрирован");
+                }
+                var Log = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Login == _user.Login.ToString());
+                if (Log != null)
+                {
+                    errors.AppendLine("Такой логин уже существует, выберите другой");
+                }
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
                 UchPractikEntities1.GetContext().User.Add(_user);
             }
             try

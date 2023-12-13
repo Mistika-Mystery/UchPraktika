@@ -49,10 +49,7 @@ namespace UchPraktika.Pages
             match=nazvania.Matches(NameTB.Text);
             if (match.Count == 0) errors.AppendLine("Название должно содержать только русские быквы! Первая буква должна быть Заглавной!");
             var Roll = UchPractikEntities1.GetContext().Role.FirstOrDefault(x => x.RoleName == _role.RoleName.ToString());
-            if (Roll != null)
-            {
-                errors.AppendLine("Такая роль уже существует, выберите другую");
-            }
+            
 
 
             if (errors.Length > 0)
@@ -63,6 +60,15 @@ namespace UchPraktika.Pages
 
             if (_role.RileID==0)
             {
+                if (Roll != null)
+                {
+                    errors.AppendLine("Такая роль уже существует, выберите другую");
+                }
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
                 UchPractikEntities1.GetContext().Role.Add(_role);
             }
             try

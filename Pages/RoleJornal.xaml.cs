@@ -44,13 +44,13 @@ namespace UchPraktika.Pages
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
             var delRole = RoleDG.SelectedItems.Cast<Role>().ToList();
-            if (MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Вы уверены, что хотите удалить роль?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
                 {
                     UchPractikEntities1.GetContext().Role.RemoveRange(delRole);
                     UchPractikEntities1.GetContext().SaveChanges();
-                    MessageBox.Show("Пользователь удален!");
+                    MessageBox.Show("Роль удалена!");
                     RoleDG.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
 
                 }

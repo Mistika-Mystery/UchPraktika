@@ -45,12 +45,27 @@ namespace UchPraktika.Pages
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new EddEditUserPage((sender as Button).DataContext as User));
         }
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
+            var delUser = UserDG.SelectedItems.Cast<User>().ToList();
+            if (MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    UchPractikEntities1.GetContext().User.RemoveRange(delUser);
+                    UchPractikEntities1.GetContext().SaveChanges();
+                    MessageBox.Show("Пользователь удален!");
+                    UserDG.ItemsSource = UchPractikEntities1.GetContext().User.ToList();
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
