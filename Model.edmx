@@ -40,10 +40,10 @@
             <PropertyRef Name="RequestID" />
           </Key>
           <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
           <Property Name="StatusID" Type="int" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="UserID" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="Img" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Role">
@@ -100,7 +100,7 @@
           <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DR" Type="date" Nullable="false" />
           <Property Name="Tel" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -135,7 +135,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Requests_User">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
@@ -312,10 +312,10 @@
             <PropertyRef Name="RequestID" />
           </Key>
           <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RequestDate" Type="DateTime" Precision="3" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="StatusID" Type="Int32" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Requests_Status1" FromRole="Requests" ToRole="Status" />
           <NavigationProperty Name="User" Relationship="Self.FK_Requests_User" FromRole="Requests" ToRole="User" />
@@ -381,7 +381,7 @@
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DR" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -468,7 +468,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Requests_User">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">

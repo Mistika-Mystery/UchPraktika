@@ -65,6 +65,31 @@ namespace UchPraktika.Pages
             if (_user.Role == null) errors.AppendLine("Выберите роль");
             if (_user.Departments == null) errors.AppendLine("Выберите подразделение");
             if (_user.Positions == null) errors.AppendLine("Выберите должность");
+            var Email = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Email == _user.Email.ToString());
+            if (Email != null)
+            {
+                errors.AppendLine("Этот email уже заригистрирован");
+            }
+            var Tel = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Tel == _user.Tel.ToString());
+            if (Tel != null)
+            {
+                errors.AppendLine("Этот телефон уже заригистрирован");
+            }
+            var Log = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Login == _user.Login.ToString());
+            if (Log != null)
+            {
+                errors.AppendLine("Такой логин уже существует, выберите другой");
+            }
+            match = name.Matches(NameTB.Text);
+            if (match.Count == 0) errors.AppendLine("Имя должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+            match = name.Matches(SurnameTB.Text);
+            if (match.Count == 0) errors.AppendLine("Фамилия должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+            match = name.Matches(FathNameTB.Text);
+            if (match.Count == 0) errors.AppendLine("Отчество должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+
+
+
+
 
             if (errors.Length > 0)
             {

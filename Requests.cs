@@ -15,10 +15,10 @@ namespace UchPraktika
     public partial class Requests
     {
         public int RequestID { get; set; }
-        public Nullable<System.DateTime> RequestDate { get; set; }
+        public System.DateTime RequestDate { get; set; }
         public int StatusID { get; set; }
         public string Description { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public int UserID { get; set; }
         public byte[] Img { get; set; }
     
         public virtual Status Status { get; set; }

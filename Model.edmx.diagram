@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f669a6243e8e43daae4de8c544aac837" Name="Diagram1">
+      <Diagram DiagramId="d3ec1088fa8746d48071dc9fe172a570" Name="Diagram1">
         <EntityTypeShape EntityType="UchPractikModel.Departments" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="UchPractikModel.Files" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="UchPractikModel.LicensiaInfo" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />

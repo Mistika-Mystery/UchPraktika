@@ -47,7 +47,7 @@ namespace UchPraktika.Pages
             StringBuilder errors= new StringBuilder();
             if (string.IsNullOrWhiteSpace(_role.RoleName))errors.AppendLine("Укажите название роли!");
             match=nazvania.Matches(NameTB.Text);
-            if (match.Count == 0) errors.AppendLine("Название должно содеожать только русские быквы! Первая буква должна быть Заглавной!");
+            if (match.Count == 0) errors.AppendLine("Название должно содержать только русские быквы! Первая буква должна быть Заглавной!");
             var Roll = UchPractikEntities1.GetContext().Role.FirstOrDefault(x => x.RoleName == _role.RoleName.ToString());
             if (Roll != null)
             {
