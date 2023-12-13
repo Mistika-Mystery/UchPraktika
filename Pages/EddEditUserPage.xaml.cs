@@ -24,7 +24,7 @@ namespace UchPraktika.Pages
     public partial class EddEditUserPage : Page
     {
         private User _user = new User();
-        Regex name = new Regex(@"^[А-ЯЁа-яё\s\-]{2,50}$");
+        Regex name = new Regex(@"^[А-ЯЁ][А-ЯЁа-яё\s\-]{2,50}$");
         Regex cifr = new Regex(@"^\d{7}$|^\d{10}$");
         Regex email = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
         Regex logg = new Regex(@"^[a-zA-Zа-яА-Я0-9]{1,50}$");

@@ -24,6 +24,21 @@ namespace UchPraktika.Pages
         {
             InitializeComponent();
             
+
+            var allDepartm = UchPractikEntities1.GetContext().Departments.ToList();
+            allDepartm.Insert(0, new Departments
+            {
+                DepartmentName = "Все типы"
+            });
+            DepartmantCB.ItemsSource = allDepartm;
+
+            var allPosition = UchPractikEntities1.GetContext().Positions.ToList();
+            allPosition.Insert(0, new Positions
+            {
+                PositionName = "Все типы"
+            });
+            PositionCB.ItemsSource = allPosition;
+
         }
 
 
@@ -51,7 +66,7 @@ namespace UchPraktika.Pages
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
             var delUser = UserDG.SelectedItems.Cast<User>().ToList();
-         
+
             if (MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
@@ -77,5 +92,25 @@ namespace UchPraktika.Pages
                 UserDG.ItemsSource = UchPractikEntities1.GetContext().User.ToList();
             }
         }
+
+        private void PoiskTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_Filter(PoiskTB.Text);
+        }
+        private void DepartmantCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter(DepartmantCB.Text);
+        }
+
+        private void PositionCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter(PositionCB.Text);
+        }
+
+        private void Seach_Filter(string search = "")
+        {
+        }
+
+       
     }
 }

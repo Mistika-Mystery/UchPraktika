@@ -23,7 +23,7 @@ namespace UchPraktika.Pages
     public partial class AddEditRole : Page
     {
         private Role _role = new Role();
-        Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]*$");
+        Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]{2,50}$");
         MatchCollection match;
         public AddEditRole(Role selectRole)
         {
@@ -47,7 +47,7 @@ namespace UchPraktika.Pages
             StringBuilder errors= new StringBuilder();
             if (string.IsNullOrWhiteSpace(_role.RoleName))errors.AppendLine("Укажите название роли!");
             match=nazvania.Matches(NameTB.Text);
-            if (match.Count == 0) errors.AppendLine("Название должно содержать только русские быквы! Первая буква должна быть Заглавной!");
+            if (match.Count == 0) errors.AppendLine("Название должно содержать только русские быквы! Первая буква должна быть Заглавной! Длина от 2 до 50 символов");
             var Roll = UchPractikEntities1.GetContext().Role.FirstOrDefault(x => x.RoleName == _role.RoleName.ToString());
             
 
@@ -62,7 +62,7 @@ namespace UchPraktika.Pages
             {
                 if (Roll != null)
                 {
-                    errors.AppendLine("Такая роль уже существует, выберите другую");
+                    errors.AppendLine("Такая роль уже существует!");
                 }
                 if (errors.Length > 0)
                 {
