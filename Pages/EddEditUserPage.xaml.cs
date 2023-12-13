@@ -86,6 +86,11 @@ namespace UchPraktika.Pages
                 errors.AppendLine("Неправильно введена дата рождения");
 
             }
+            if (DRDP.SelectedDate > DateTime.Now.AddYears(-18) || DRDP.SelectedDate < DateTime.Now.AddYears(-99))
+            {
+                errors.AppendLine("Регистрироваться могут только люди страше 18 лет и младше 99");
+            }
+
             if (errors.Length > 0)
             {
                     MessageBox.Show(errors.ToString());

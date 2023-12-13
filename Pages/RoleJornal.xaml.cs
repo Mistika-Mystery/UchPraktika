@@ -20,6 +20,7 @@ namespace UchPraktika.Pages
     /// </summary>
     public partial class RoleJornal : Page
     {
+        
         public RoleJornal()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace UchPraktika.Pages
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
             var delRole = RoleDG.SelectedItems.Cast<Role>().ToList();
+           
             if (MessageBox.Show("Вы уверены, что хотите удалить роль?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
