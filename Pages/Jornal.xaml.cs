@@ -35,7 +35,7 @@ namespace UchPraktika.Pages
         {
             StringBuilder errors = new StringBuilder();
             var delReq = JornalDG.SelectedItems.Cast<Requests>().ToList();
-            if (delReq.Count != 1) errors.AppendLine("Для удаления выберите только одного пользовател)");
+            if (delReq.Count != 1) errors.AppendLine("Для удаления выберите только одну запись!");
 
             if (errors.Length > 0)
             {
@@ -43,14 +43,14 @@ namespace UchPraktika.Pages
                 return;
             }
 
-            if (MessageBox.Show("Вы уверены, что хотите удалить роль?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Вы уверены, что хотите удалить Заявку?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
                 {
                     UchPractikEntities1.GetContext().Requests.RemoveRange(delReq);
                     UchPractikEntities1.GetContext().SaveChanges();
-                    MessageBox.Show("Роль удалена!");
-                    JornalDG.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
+                    MessageBox.Show("Заявка удалена!");
+                    JornalDG.ItemsSource = UchPractikEntities1.GetContext().Requests.ToList();
 
                 }
                 catch (Exception ex)
@@ -72,7 +72,7 @@ namespace UchPraktika.Pages
 
         private void CreateBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditJornal(null));
+            NavigationService.Navigate(new NewJornal());
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

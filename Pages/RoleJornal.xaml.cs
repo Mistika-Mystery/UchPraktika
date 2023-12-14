@@ -46,7 +46,7 @@ namespace UchPraktika.Pages
         {
             StringBuilder errors = new StringBuilder();
             var delRole = RoleDG.SelectedItems.Cast<Role>().ToList();
-            if (delRole.Count != 1) errors.AppendLine("Для удаления выберите только одну роль)");
+            if (delRole.Count != 1) errors.AppendLine("Для удаления выберите только одну роль!");
 
             if (errors.Length > 0)
             {

@@ -34,9 +34,22 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Дата заявки" Width="*" Binding="{Binding RequestDate}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Изображение" Width="*" Binding="{Binding Img}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status.NameStatus}"></DataGridTextColumn>
-                
+                <DataGridTemplateColumn  Header="Изображение">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image x:Name="ImageV" Width="100" >
+                                <Image.Source>
+                                    <Binding Path="Img">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/wrench.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

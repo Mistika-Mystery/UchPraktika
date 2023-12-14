@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,8 +46,25 @@ namespace UchPraktika.Pages
                 MessageBox.Show(errors.ToString());
                 return;
             }
+         
+            _req.RequestDate = DateTime.Now;
+            _req.StatusID = 1;
+            _req.UserID = Flag.idUseri;
+            
+            _req.Img = data;
 
+            UchPractikEntities1.GetContext().Requests.Add(_req);
 
+            try
+            {
+                UchPractikEntities1.GetContext().SaveChanges();
+                MessageBox.Show("Заявка успешно создана!");
+                NavigationService.Navigate(new Jornal());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
 
         }
 
@@ -58,6 +76,7 @@ namespace UchPraktika.Pages
             if (fileOpen.ShowDialog() == true)
             {
                 data = System.IO.File.ReadAllBytes(fileOpen.FileName);
+               
                 ImageSerice.Source = new ImageSourceConverter().ConvertFrom(data) as ImageSource;
             }
         }
