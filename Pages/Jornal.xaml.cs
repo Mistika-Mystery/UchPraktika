@@ -23,12 +23,12 @@ namespace UchPraktika.Pages
         public Jornal()
         {
             InitializeComponent();
-            JornalDG.ItemsSource=UchPractikEntities1.GetContext().Requests.ToList();
+            
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddEditJornal((sender as Button).DataContext as Requests));
         }
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,16 @@ namespace UchPraktika.Pages
 
         private void CreateBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditJornal());
+            NavigationService.Navigate(new AddEditJornal(null));
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                UchPractikEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                JornalDG.ItemsSource = UchPractikEntities1.GetContext().Requests.ToList();
+            }
         }
     }
 }

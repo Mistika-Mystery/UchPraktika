@@ -8,7 +8,6 @@ namespace UchPraktika
 {
     internal class Flag
     {
-        public static string flag;
-        public static int role;
+                public static int role;
     }
 }

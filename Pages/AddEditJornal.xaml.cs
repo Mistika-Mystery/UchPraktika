@@ -20,9 +20,25 @@ namespace UchPraktika.Pages
     /// </summary>
     public partial class AddEditJornal : Page
     {
-        public AddEditJornal()
+        private Requests _req = new Requests();
+       // private byte[] data = null;
+        public AddEditJornal(Requests selecJornal)
         {
             InitializeComponent();
+            if (selecJornal != null)
+            {
+                _req = selecJornal;
+            }
+            DataContext = _req;
+            StatusCB.ItemsSource = UchPractikEntities1.GetContext().Status.ToList();
         }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Jornal());
+           
+        }
+
+       
     }
 }

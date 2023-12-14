@@ -47,14 +47,14 @@ namespace UchPraktika.Pages
                     {
                         case 2:
                             MessageBox.Show("Приветсвуем Вас, " + userName.Name + "!", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                            NavigationService.Navigate(new UserPage(Flag.flag));
+                            NavigationService.Navigate(new UserPage());
                             break;
 
                         case 1:
                             MessageBox.Show("Приветсвуем Вас " + userName.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
 
                             this.Content = null;
-                            NavigationService.Navigate(new Jornal(Flag.flag));
+                            NavigationService.Navigate(new Jornal());
 
                             break;
                         default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;
