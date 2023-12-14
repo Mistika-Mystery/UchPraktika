@@ -23,8 +23,28 @@ namespace UchPraktika.Pages
         public Jornal()
         {
             InitializeComponent();
+
+            var allDepartm = UchPractikEntities1.GetContext().Departments.ToList();
+            allDepartm.Insert(0, new Departments
+            {
+                DepartmentName = "Все Подразделения"
+            });
+            DepartmantCB.ItemsSource = allDepartm;
+
+            var allPosition = UchPractikEntities1.GetContext().Positions.ToList();
+            allPosition.Insert(0, new Positions
+            {
+                PositionName = "Все Должности"
+            });
+            PositionCB.ItemsSource = allPosition;
+
             
+            Seach_Filter();
+
+            
+
         }
+      
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
@@ -82,6 +102,63 @@ namespace UchPraktika.Pages
                 UchPractikEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 JornalDG.ItemsSource = UchPractikEntities1.GetContext().Requests.ToList();
             }
+        }
+
+        private void DepartmantCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter();
+        }
+
+        private void PositionCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter();
+        }
+
+        private void PoiskTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_Filter();
+        }
+
+        private void Seach_Filter()
+        {
+            var jPoisk = UchPractikEntities1.GetContext().Requests.ToList();
+
+
+            jPoisk = jPoisk.Where(s => s.User.Name.ToLower().Contains(PoiskTB.Text.ToLower())
+                || (s.User.Surname ?? "").ToLower().Contains(PoiskTB.Text.ToLower())
+                || (s.Description ?? "").ToLower().Contains(PoiskTB.Text.ToLower())
+                || (s.User.FatherName ?? "").ToLower().Contains(PoiskTB.Text.ToLower())).ToList();
+
+
+            if (DepartmantCB.SelectedIndex != 0)
+            {
+                jPoisk = jPoisk.Where(x => x.User.Departments == DepartmantCB.SelectedValue).ToList();
+            }
+
+            if (PositionCB.SelectedIndex != 0)
+            {
+                jPoisk = jPoisk.Where(p => p.User.Positions == PositionCB.SelectedValue).ToList();
+            }
+
+
+            switch (SortBox.SelectedIndex)
+            {
+
+                case 1:
+                    jPoisk = jPoisk.OrderBy(s => s.RequestDate).ToList();
+                    break;
+                case 2:
+                    jPoisk = jPoisk.OrderByDescending(s => s.RequestDate).ToList();
+
+                    break;
+            }
+
+                    JornalDG.ItemsSource = jPoisk;
+        }
+
+        private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter();
         }
     }
 }

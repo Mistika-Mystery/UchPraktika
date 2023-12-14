@@ -20,7 +20,7 @@ namespace UchPraktika.Pages
     /// </summary>
     public partial class UsersJornal : Page
     {
-        List<User> currentTasks = UchPractikEntities1.GetContext().User.ToList();
+        
         public UsersJornal()
         {
             InitializeComponent();
