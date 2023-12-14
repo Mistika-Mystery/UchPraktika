@@ -20,6 +20,7 @@ namespace UchPraktika.Pages
     /// </summary>
     public partial class UsersJornal : Page
     {
+        List<User> currentTasks = UchPractikEntities1.GetContext().User.ToList();
         public UsersJornal()
         {
             InitializeComponent();
@@ -28,17 +29,17 @@ namespace UchPraktika.Pages
             var allDepartm = UchPractikEntities1.GetContext().Departments.ToList();
             allDepartm.Insert(0, new Departments
             {
-                DepartmentName = "Все типы"
+                DepartmentName = "Все Подразделения"
             });
             DepartmantCB.ItemsSource = allDepartm;
 
             var allPosition = UchPractikEntities1.GetContext().Positions.ToList();
             allPosition.Insert(0, new Positions
             {
-                PositionName = "Все типы"
+                PositionName = "Все Должности"
             });
             PositionCB.ItemsSource = allPosition;
-
+            Seach_Filter();
         }
 
 
@@ -95,22 +96,41 @@ namespace UchPraktika.Pages
 
         private void PoiskTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Seach_Filter(PoiskTB.Text);
+            Seach_Filter();
         }
         private void DepartmantCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Seach_Filter(DepartmantCB.Text);
+            Seach_Filter();
         }
 
         private void PositionCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Seach_Filter(PositionCB.Text);
+            Seach_Filter();
         }
 
-        private void Seach_Filter(string search = "")
+        private void Seach_Filter()
         {
+            var UserPoisk = UchPractikEntities1.GetContext().User.ToList();
+
+            
+            UserPoisk = UserPoisk.Where(s => s.Name.ToLower().Contains(PoiskTB.Text.ToLower())
+                || (s.Surname ?? "").ToLower().Contains(PoiskTB.Text.ToLower())
+                || (s.FatherName ?? "").ToLower().Contains(PoiskTB.Text.ToLower())).ToList();
+            
+          
+            if (DepartmantCB.SelectedIndex != 0)
+            {
+                UserPoisk = UserPoisk.Where(x => x.Departments == DepartmantCB.SelectedValue).ToList();
+            }
+           
+            if (PositionCB.SelectedIndex !=0)
+            {
+                UserPoisk = UserPoisk.Where(p => p.Positions == PositionCB.SelectedValue).ToList();
+            }
+
+            UserDG.ItemsSource = UserPoisk;
         }
 
-       
+
     }
 }
