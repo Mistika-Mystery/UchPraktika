@@ -33,7 +33,31 @@ namespace UchPraktika.Pages
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+            StringBuilder errors = new StringBuilder();
+            var delReq = JornalDG.SelectedItems.Cast<Requests>().ToList();
+            if (delReq.Count != 1) errors.AppendLine("Для удаления выберите только одного пользовател)");
+
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+            if (MessageBox.Show("Вы уверены, что хотите удалить роль?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    UchPractikEntities1.GetContext().Requests.RemoveRange(delReq);
+                    UchPractikEntities1.GetContext().SaveChanges();
+                    MessageBox.Show("Роль удалена!");
+                    JornalDG.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
         private void LogBTN_Click(object sender, RoutedEventArgs e)

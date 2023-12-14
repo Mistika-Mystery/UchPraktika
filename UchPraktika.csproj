@@ -107,6 +107,9 @@
     <Compile Include="Pages\Jornal.xaml.cs">
       <DependentUpon>Jornal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewJornal.xaml.cs">
+      <DependentUpon>NewJornal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RoleJornal.xaml.cs">
       <DependentUpon>RoleJornal.xaml</DependentUpon>
     </Compile>
@@ -173,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Jornal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewJornal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,8 +25,8 @@ namespace UchPraktika
         {
             InitializeComponent();
             //FramMain.Navigate(new GlavPage());
-            FramMain.Navigate(new UsersJornal());
-            
+            //FramMain.Navigate(new UsersJornal());
+            FramMain.Navigate(new NewJornal());
         }
 
         
