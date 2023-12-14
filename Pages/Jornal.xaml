@@ -56,7 +56,7 @@
         </DataGrid>
         <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0" Click="LogBTN_Click"/>
         <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click"/>
-        <Button x:Name="CreateBTN" Content="  Добавить новую запись  " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
+        <Button x:Name="CreateBTN" Content="  Добавить новую запись  " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="CreateBTN_Click"/>
         <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120" Margin="100,0,0,0"/>
         <ComboBox HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Margin="0,0,100,0"/>
 

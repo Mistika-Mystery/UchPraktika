@@ -21,6 +21,7 @@ namespace UchPraktika.Pages
     /// </summary>
     public partial class GlavPage : Page
     {
+        public int role;
         public GlavPage()
         {
             InitializeComponent();
@@ -41,18 +42,19 @@ namespace UchPraktika.Pages
               
                 else
                 {
+                    Flag.role = userName.RoleID;
                     switch (userName.RoleID)
                     {
                         case 2:
                             MessageBox.Show("Приветсвуем Вас, " + userName.Name + "!", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-                            NavigationService.Navigate(new UserPage());
+                            NavigationService.Navigate(new UserPage(Flag.flag));
                             break;
 
                         case 1:
                             MessageBox.Show("Приветсвуем Вас " + userName.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
 
                             this.Content = null;
-                            NavigationService.Navigate(new Jornal());
+                            NavigationService.Navigate(new Jornal(Flag.flag));
 
                             break;
                         default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;

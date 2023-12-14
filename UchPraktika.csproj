@@ -70,6 +70,7 @@
     <Compile Include="Files.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Flag.cs" />
     <Compile Include="LicensiaInfo.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -87,6 +88,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditJornal.xaml.cs">
+      <DependentUpon>AddEditJornal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddEditRole.xaml.cs">
       <DependentUpon>AddEditRole.xaml</DependentUpon>
@@ -148,6 +152,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddEditJornal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditRole.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

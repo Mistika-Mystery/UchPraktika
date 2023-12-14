@@ -45,5 +45,10 @@ namespace UchPraktika.Pages
         {
             NavigationService.Navigate(new AdnimPage());
         }
+
+        private void CreateBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditJornal());
+        }
     }
 }
