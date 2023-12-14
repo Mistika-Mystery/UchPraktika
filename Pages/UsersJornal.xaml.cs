@@ -57,6 +57,7 @@ namespace UchPraktika.Pages
         private void CreateBTN_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EddEditUserPage(null));
+            
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
@@ -66,9 +67,17 @@ namespace UchPraktika.Pages
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
             var delUser = UserDG.SelectedItems.Cast<User>().ToList();
+            if (delUser.Count !=1 ) errors.AppendLine("Для удаления выберите только одного пользователя)");
 
-            if (MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+            if (MessageBox.Show($"Вы уверены, что хотите удалить пользователя? ", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
                 {

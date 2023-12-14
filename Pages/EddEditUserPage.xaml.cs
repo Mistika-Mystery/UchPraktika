@@ -40,6 +40,7 @@ namespace UchPraktika.Pages
             RoleCB.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
             DepatCB.ItemsSource = UchPractikEntities1.GetContext().Departments.ToList();
             PositCB.ItemsSource = UchPractikEntities1.GetContext().Positions.ToList();
+            
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
@@ -99,6 +100,7 @@ namespace UchPraktika.Pages
 
             if (_user.UserID== 0)
             {
+                
                 var Email = UchPractikEntities1.GetContext().User.FirstOrDefault(x => x.Email == _user.Email.ToString());
                 if (Email != null)
                 {
@@ -131,6 +133,19 @@ namespace UchPraktika.Pages
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void DRDP_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            DatePicker datePicker = (DatePicker)sender;
+
+            if (datePicker.SelectedDate == DateTime.MinValue)
+            {
+                datePicker.SelectedDate = DateTime.Now;
+            }
+
+            
         }
     }
 }
