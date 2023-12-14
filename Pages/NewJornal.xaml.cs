@@ -22,10 +22,12 @@ namespace UchPraktika.Pages
     /// </summary>
     public partial class NewJornal : Page
     {
+        private Requests _req = new Requests();
         private byte[] data = null;
         public NewJornal()
         {
             InitializeComponent();
+            DataContext = _req;
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
@@ -35,6 +37,16 @@ namespace UchPraktika.Pages
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(_req.Description))
+                errors.AppendLine("Опишите проблему! Или позвоните по номеру: 666-999 !");
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+
 
         }
 

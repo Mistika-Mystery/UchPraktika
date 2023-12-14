@@ -22,6 +22,7 @@ namespace UchPraktika.Pages
     public partial class GlavPage : Page
     {
         public int role;
+        public int idUseri;
         public GlavPage()
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace UchPraktika.Pages
                 else
                 {
                     Flag.role = userName.RoleID;
+                    Flag.idUseri = userName.UserID;
                     switch (userName.RoleID)
                     {
                         case 2:

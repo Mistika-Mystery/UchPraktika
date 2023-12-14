@@ -9,5 +9,6 @@ namespace UchPraktika
     internal class Flag
     {
                 public static int role;
+                public static int idUseri;
     }
 }
