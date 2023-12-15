@@ -24,6 +24,7 @@ namespace UchPraktika.Pages
         public int role;
         public int idUseri;
         public string NameFL;
+        public static string PosisFl;
         public GlavPage()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace UchPraktika.Pages
                     Flag.role = userName.RoleID;
                     Flag.idUseri = userName.UserID;
                     Flag.NameFL = userName.Name;
+                    Flag.PosisFl = userName.Role.RoleName;
                     switch (userName.RoleID)
                     {
                         case 2:

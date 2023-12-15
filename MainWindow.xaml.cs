@@ -27,15 +27,7 @@ namespace UchPraktika
             FramMain.Navigate(new GlavPage());
             //FramMain.Navigate(new UsersJornal());
             //FramMain.Navigate(new NewJornal());
-            if (Flag.idUseri == 0)
-            {
-                InfoTB.Visibility = Visibility.Hidden;
-            }
-            else if (Flag.idUseri != 0)
-            {
-                InfoTB.Visibility = Visibility.Visible;
-                PosicInfoTB.Text = Flag.NameFL;
-            }
+            
         }
 
         

@@ -73,6 +73,12 @@
                 <ComboBoxItem Content="Вначале новые"/>
             </ComboBox>
         </StackPanel>
+        <StackPanel x:Name="InfoTB" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" MouseLeftButtonDown="InfoTB_MouseLeftButtonDown">
+            <TextBlock Text="Вы вошли как:"></TextBlock>
+            <TextBlock x:Name="PosicInfoTB" Margin="5,0,0,0" FontWeight="Bold"></TextBlock>
+            <TextBlock Text=","/>
+            <TextBlock x:Name="NameInfoTB" Margin="5,0,0,0" FontWeight="Bold"></TextBlock>
+        </StackPanel>
 
 
 

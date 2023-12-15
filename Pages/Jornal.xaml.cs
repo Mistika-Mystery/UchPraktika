@@ -38,7 +38,18 @@ namespace UchPraktika.Pages
                 PositionName = "Все Должности"
             });
             PositionCB.ItemsSource = allPosition;
-                        
+
+            if (Flag.idUseri == 0)
+            {
+                InfoTB.Visibility = Visibility.Hidden;
+            }
+            else if (Flag.idUseri != 0)
+            {
+                InfoTB.Visibility = Visibility.Visible;
+                PosicInfoTB.Text = Flag.PosisFl;
+                NameInfoTB.Text = Flag.NameFL;
+            }
+
             Seach_Filter();
 
             
@@ -160,6 +171,11 @@ namespace UchPraktika.Pages
         private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Seach_Filter();
+        }
+
+        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new InfoLogPage());
         }
     }
 }

@@ -30,6 +30,17 @@ namespace UchPraktika.Pages
             });
             StatusCB.ItemsSource = allStatus;
 
+            if (Flag.idUseri == 0)
+            {
+                InfoTB.Visibility = Visibility.Hidden;
+            }
+            else if (Flag.idUseri != 0)
+            {
+                InfoTB.Visibility = Visibility.Visible;
+                PosicInfoTB.Text = Flag.PosisFl;
+                NameInfoTB.Text = Flag.NameFL;
+            }
+
 
         }
 
@@ -79,7 +90,7 @@ namespace UchPraktika.Pages
         private void Seach_Filter()
         {
             var jPoisk = UchPractikEntities1.GetContext().Requests.ToList();
-
+     
             
 
             jPoisk = jPoisk.Where(s => (s.Description ?? "").ToLower().Contains(PoiskTB.Text.ToLower())).ToList();
@@ -87,6 +98,7 @@ namespace UchPraktika.Pages
             if (Flag.idUseri !=0 )
             {
                 jPoisk = jPoisk.Where(x => x.UserID == Flag.idUseri).ToList();
+                
             }
 
 
@@ -109,6 +121,11 @@ namespace UchPraktika.Pages
             }
 
             JornalDG.ItemsSource = jPoisk;
+        }
+
+        private void InfoTB_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new InfoLogPage());
         }
     }
 }

@@ -104,6 +104,9 @@
     <Compile Include="Pages\GlavPage.xaml.cs">
       <DependentUpon>GlavPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\InfoLogPage.xaml.cs">
+      <DependentUpon>InfoLogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Jornal.xaml.cs">
       <DependentUpon>Jornal.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\GlavPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InfoLogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
