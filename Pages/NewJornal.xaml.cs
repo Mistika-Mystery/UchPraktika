@@ -29,11 +29,14 @@ namespace UchPraktika.Pages
         {
             InitializeComponent();
             DataContext = _req;
+            
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Jornal());
+            if (Flag.role == 1)
+                NavigationService.Navigate(new Jornal());
+            else if (Flag.role == 2) NavigationService.Navigate(new UserPage());
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
@@ -59,7 +62,9 @@ namespace UchPraktika.Pages
             {
                 UchPractikEntities1.GetContext().SaveChanges();
                 MessageBox.Show("Заявка успешно создана!");
-                NavigationService.Navigate(new Jornal());
+                if (Flag.role == 1)
+                    NavigationService.Navigate(new Jornal());
+                else if (Flag.role == 2) NavigationService.Navigate(new UserPage());
             }
             catch (Exception ex)
             {

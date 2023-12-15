@@ -30,7 +30,7 @@
         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Заявитель:  " VerticalAlignment="Center" Grid.Row="2"/>
         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Дата создания:  " VerticalAlignment="Center" Grid.Row="3"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Описание:" VerticalAlignment="Center" Grid.Column="2"/>
-        <TextBlock x:Name="Статус" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Изменить статус на:  " VerticalAlignment="Center" Grid.Row="6"/>
+        <TextBlock x:Name="tbst" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Изменить статус на:  " VerticalAlignment="Center" Grid.Row="6"/>
         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Должность:  " VerticalAlignment="Center" Grid.Row="1"/>
         <TextBlock x:Name="DepatTB" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding User.Departments.DepartmentName}" VerticalAlignment="Center" MinHeight="3" FontSize="16"/>
         <TextBlock x:Name="PositTB" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding User.Positions.PositionName}" VerticalAlignment="Center" Grid.Row="1" FontSize="16"/>

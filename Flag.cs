@@ -10,5 +10,6 @@ namespace UchPraktika
     {
                 public static int role;
                 public static int idUseri;
+                public static string NameFL;
     }
 }

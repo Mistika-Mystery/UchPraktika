@@ -34,12 +34,21 @@ namespace UchPraktika.Pages
             DataContext = _req;
             StatusCB.ItemsSource = UchPractikEntities1.GetContext().Status.ToList();
             if (_req.Img != null) ImgOshib.Source = new ImageSourceConverter().ConvertFrom(_req.Img) as ImageSource;
+           
+            if (Flag.role == 2) 
+            { 
+                SaveBTN.Visibility = Visibility.Hidden;
+                tbst.Visibility = Visibility.Hidden;
+                StatusCB.Visibility = Visibility.Hidden;
+            }
 
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Jornal());
+            if (Flag.role == 1)
+                NavigationService.Navigate(new Jornal());
+            else if (Flag.role == 2) NavigationService.Navigate(new UserPage());
            
         }
 
@@ -51,7 +60,9 @@ namespace UchPraktika.Pages
             {
                 UchPractikEntities1.GetContext().SaveChanges();
         MessageBox.Show("Запись изменена!");
-                NavigationService.Navigate(new Jornal());
+                if (Flag.role == 1)
+                    NavigationService.Navigate(new Jornal());
+                else if (Flag.role == 2) NavigationService.Navigate(new UserPage());
             }
             catch (Exception ex)
             {

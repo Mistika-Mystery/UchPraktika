@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,8 +38,7 @@ namespace UchPraktika.Pages
                 PositionName = "Все Должности"
             });
             PositionCB.ItemsSource = allPosition;
-
-            
+                        
             Seach_Filter();
 
             
@@ -54,6 +54,7 @@ namespace UchPraktika.Pages
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
+            if (Flag.role == 6) errors.AppendLine("Менеджер не может удалять записи. Только редактировать!");
             var delReq = JornalDG.SelectedItems.Cast<Requests>().ToList();
             if (delReq.Count != 1) errors.AppendLine("Для удаления выберите только одну запись!");
 

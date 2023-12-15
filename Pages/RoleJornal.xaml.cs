@@ -45,6 +45,7 @@ namespace UchPraktika.Pages
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
+            if (Flag.role == 6) errors.AppendLine("Менеджер не может удалять записи. Только редактировать!");
             var delRole = RoleDG.SelectedItems.Cast<Role>().ToList();
             if (delRole.Count != 1) errors.AppendLine("Для удаления выберите только одну роль!");
 

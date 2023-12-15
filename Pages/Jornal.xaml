@@ -57,7 +57,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Width="60">
+                <DataGridTemplateColumn x:Name="delColumn" Width="60">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button x:Name="DelBTN" Content="Удалить" Click="DelBTN_Click"></Button>

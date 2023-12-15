@@ -23,6 +23,7 @@ namespace UchPraktika.Pages
     {
         public int role;
         public int idUseri;
+        public string NameFL;
         public GlavPage()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace UchPraktika.Pages
                 {
                     Flag.role = userName.RoleID;
                     Flag.idUseri = userName.UserID;
+                    Flag.NameFL = userName.Name;
                     switch (userName.RoleID)
                     {
                         case 2:
@@ -54,10 +56,11 @@ namespace UchPraktika.Pages
 
                         case 1:
                             MessageBox.Show("Приветсвуем Вас " + userName.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                            this.Content = null;
                             NavigationService.Navigate(new Jornal());
-
+                            break;
+                        case 6:
+                            MessageBox.Show("Приветсвуем Вас " + userName.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
+                            NavigationService.Navigate(new Jornal());
                             break;
                         default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;
 
