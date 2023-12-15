@@ -173,7 +173,9 @@ namespace UchPraktika.Pages
             Seach_Filter();
         }
 
-        private void StackPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+       
+
+        private void InfoTB_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new InfoLogPage());
         }

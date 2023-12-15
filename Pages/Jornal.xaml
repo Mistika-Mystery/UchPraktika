@@ -71,7 +71,7 @@
         <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click"/>
         <Button x:Name="CreateBTN" Content="  Добавить новую запись  " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="CreateBTN_Click"/>
         <StackPanel VerticalAlignment="Center">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Поиск по ФИО/Описанию" VerticalAlignment="Top" FontSize="16"/>
             <TextBox x:Name="PoiskTB" TextWrapping="Wrap" TextChanged="PoiskTB_TextChanged"  VerticalAlignment="Center" Width="147" Margin="10,0,0,0" FontSize="16"/>
             <ComboBox x:Name="DepartmantCB" DisplayMemberPath="DepartmentName" SelectionChanged="DepartmantCB_SelectionChanged" HorizontalAlignment="Left"  Grid.RowSpan="2" VerticalAlignment="Top" Width="120" Margin="10,0,0,0" SelectedIndex="0"/>
@@ -82,7 +82,7 @@
                 <ComboBoxItem Content="Вначале новые"/>
             </ComboBox>
         </StackPanel>
-            <StackPanel x:Name="InfoTB" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,3,0,0">
+            <StackPanel x:Name="InfoTB" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,3,0,0" MouseLeftButtonDown="InfoTB_MouseLeftButtonDown">
                 <TextBlock Text="Вы вошли как:"></TextBlock>
                 <TextBlock x:Name="PosicInfoTB" Margin="5,0,0,0" FontWeight="Bold"></TextBlock>
                 <TextBlock Text=","/>
