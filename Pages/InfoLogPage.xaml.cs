@@ -36,19 +36,16 @@ namespace UchPraktika.Pages
             }
             DataContext= jPoisk;
 
-            RoleCB.ItemsSource = UchPractikEntities1.GetContext().Role.ToList();
-            DepatCB.ItemsSource = UchPractikEntities1.GetContext().Departments.ToList();
-            PositCB.ItemsSource = UchPractikEntities1.GetContext().Positions.ToList();
+            
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Flag.role == 1 || Flag.role == 6)
+                NavigationService.Navigate(new Jornal());
+            else if (Flag.role == 2 ) NavigationService.Navigate(new UserPage());
         }
 
-        private void DRDP_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
     }
 }

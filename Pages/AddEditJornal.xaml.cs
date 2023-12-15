@@ -60,7 +60,7 @@ namespace UchPraktika.Pages
             {
                 UchPractikEntities1.GetContext().SaveChanges();
         MessageBox.Show("Запись изменена!");
-                if (Flag.role == 1)
+                if (Flag.role == 1 || Flag.role == 6)
                     NavigationService.Navigate(new Jornal());
                 else if (Flag.role == 2) NavigationService.Navigate(new UserPage());
             }

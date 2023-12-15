@@ -39,18 +39,18 @@
         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Дата рождения" VerticalAlignment="Center" FontSize="18" Grid.Row="8"/>
         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Почта" VerticalAlignment="Center" FontSize="18" Grid.Row="9"/>
         <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Телефон" VerticalAlignment="Center" FontSize="18" Grid.Row="10"/>
-        <Button x:Name="BackBTN" Content="Отмена / Назад" HorizontalAlignment="Right" Grid.Row="11" VerticalAlignment="Center" IsCancel="True" FontSize="16" Click="BackBTN_Click"/>
-        <TextBox x:Name="SurnameTB" Text="{Binding Surname}" Grid.Column="1" TextWrapping="Wrap" Width="280" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" MaxLength="50"/>
-        <TextBox x:Name="NameTB" Text="{Binding Name}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="1" MaxLength="50"/>
-        <TextBox x:Name="FathNameTB" Text="{Binding FatherName}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="2" MaxLength="50"/>
-        <ComboBox x:Name="RoleCB" SelectedItem="{Binding Role}" DisplayMemberPath="RoleName" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="280"/>
-        <ComboBox x:Name="DepatCB" SelectedItem="{Binding Departments}" DisplayMemberPath="DepartmentName" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="280"/>
-        <ComboBox x:Name="PositCB" SelectedItem="{Binding Positions}" DisplayMemberPath="PositionName" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="280"/>
-        <TextBox x:Name="LoginTB" Text="{Binding Login}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="6" MaxLength="50"/>
-        <TextBox x:Name="PassTB" Text="{Binding Pass}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="7" MaxLength="50"/>
-        <DatePicker SelectedDateChanged="DRDP_SelectedDateChanged" x:Name="DRDP" DisplayDate="2000-01-01" SelectedDate="{Binding DR}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="279" FirstDayOfWeek="Monday" SelectedDateFormat="Short" DisplayDateStart="1950-01-01" />
-        <TextBox x:Name="EmailTB" Text="{Binding Email}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="9" MaxLength="50"/>
-        <TextBox x:Name="TelTB" Text="{Binding Tel}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="10" MaxLength="11"/>
+        <Button x:Name="BackBTN" Content="   Назад   " HorizontalAlignment="Center" Grid.Row="11" VerticalAlignment="Center" IsCancel="True" FontSize="16" Click="BackBTN_Click" Grid.Column="1"/>
+        <TextBlock x:Name="SurnameTB" Text="{Binding Surname}" Grid.Column="1" TextWrapping="Wrap" Width="280" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock x:Name="NameTB" Text="{Binding Name}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="1" />
+        <TextBlock x:Name="FathNameTB" Text="{Binding FatherName}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="2" />
+        <TextBlock x:Name="RoleCB" Text="{Binding Role.RoleName}"  Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="280"/>
+        <TextBlock x:Name="DepatCB" Text="{Binding Departments.DepartmentName}"  Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="280"/>
+        <TextBlock x:Name="PositCB" Text="{Binding Positions.PositionName}"  Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="280"/>
+        <TextBlock x:Name="LoginTB" Text="{Binding Login}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="6"/>
+        <TextBlock x:Name="PassTB" Text="{Binding Pass}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="7" />
+        <TextBlock  x:Name="DRDP"  Text="{Binding DR,StringFormat=dd.MM.yyyy}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="279"  />
+        <TextBlock x:Name="EmailTB" Text="{Binding Email}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="9" />
+        <TextBlock x:Name="TelTB" Text="{Binding Tel}" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" FontSize="18" Grid.Row="10" />
 
     </Grid>
 </Page>
