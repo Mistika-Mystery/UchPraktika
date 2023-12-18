@@ -34,7 +34,7 @@ namespace UchPraktika.Pages
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (Flag.role == 1)
+            if (Flag.role == 1 || Flag.role == 6)
                 NavigationService.Navigate(new Jornal());
             else if (Flag.role == 2) NavigationService.Navigate(new UserPage());
         }

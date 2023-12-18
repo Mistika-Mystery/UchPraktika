@@ -19,7 +19,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Создание новой заявки" VerticalAlignment="Center" FontSize="22" Grid.ColumnSpan="2"/>
-        <Button x:Name="BackBTN" Content="Отмена\Назад" HorizontalAlignment="Center" Grid.Row="2" FontSize="16" Click="BackBTN_Click" Margin="0,0,0,5"/>
+        <Button x:Name="BackBTN" Content="Отмена\Назад" HorizontalAlignment="Center" Grid.Row="2" FontSize="16" Click="BackBTN_Click" Height="25" VerticalAlignment="Top"/>
         <Button x:Name="SaveBTN" Content=" Сохранить и отправить " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" FontSize="16" Grid.Column="1" Click="SaveBTN_Click"/>
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
             <Image  x:Name="ImageSerice" MaxWidth="400" MaxHeight="350"></Image>
