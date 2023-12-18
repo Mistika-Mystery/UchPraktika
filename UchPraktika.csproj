@@ -244,6 +244,7 @@
     <Resource Include="wrench.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="logo.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
