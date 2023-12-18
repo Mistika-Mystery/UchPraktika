@@ -10,12 +10,13 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
 
         </Grid.RowDefinitions>
-        <DataGrid x:Name="JornalDG" AutoGenerateColumns="False" IsReadOnly="true" Grid.Row="1">
+        <DataGrid x:Name="JornalDG" AutoGenerateColumns="False" IsReadOnly="true" Grid.Row="2">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="№" Width="50" Binding="{Binding RequestID}"></DataGridTextColumn>
@@ -67,10 +68,10 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0" Click="LogBTN_Click"/>
-        <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click"/>
-        <Button x:Name="CreateBTN" Content="  Добавить новую запись  " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="CreateBTN_Click"/>
-        <StackPanel VerticalAlignment="Center">
+        <Button x:Name="LogBTN" Content="Сменить пользователя" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Margin="10,0,0,0" Click="LogBTN_Click"/>
+        <Button x:Name="AdminPanelBTN" Content="Панель Администратора" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Margin="0,0,10,0" Click="AdminPanelBTN_Click"/>
+        <Button x:Name="CreateBTN" Content="  Добавить новую запись  " HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="CreateBTN_Click"/>
+        <StackPanel VerticalAlignment="Center" Grid.Row="1">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Поиск по ФИО/Описанию" VerticalAlignment="Top" FontSize="16"/>
             <TextBox x:Name="PoiskTB" TextWrapping="Wrap" TextChanged="PoiskTB_TextChanged"  VerticalAlignment="Center" Width="147" Margin="10,0,0,0" FontSize="16"/>
@@ -89,6 +90,7 @@
                 <TextBlock x:Name="NameInfoTB" Margin="5,0,0,0" FontWeight="Bold"></TextBlock>
             </StackPanel>
         </StackPanel>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Журнал заявок" VerticalAlignment="Center" FontSize="20"/>
 
 
 
